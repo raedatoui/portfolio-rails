@@ -66,7 +66,7 @@ namespace :deploy do
   task :cold do
     update_code
     bundle.install
-    db.reset
+    db.migrate
     assets.compile
     unicorn.reload
     # notify.mail
@@ -111,11 +111,13 @@ end
 namespace :db do
   desc "Migrate"
   task :migrate do
+    run "cd #{current_path} && /usr/bin/env rake db:create RAILS_ENV=#{stage}"
     run "cd #{current_path} && /usr/bin/env rake db:migrate RAILS_ENV=#{stage}"
   end
 
   desc "Reset"
   task :reset do
+
     run "cd #{current_path} && /usr/bin/env rake db:reset RAILS_ENV=#{stage}"
   end
 end

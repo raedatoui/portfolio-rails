@@ -31,3 +31,4 @@ production:
   database: portfolio_production
   pool: 5
   username: root
+  password: 3ntiss@r
