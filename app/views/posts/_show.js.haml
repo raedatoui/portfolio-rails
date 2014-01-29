@@ -1,0 +1,4 @@
+.content
+  = raw(@post.description)
+  .slider{:id => "slider-#{@post.id}", "data-slide-width" => @post.slide_width}
+    = raw(@post.images)

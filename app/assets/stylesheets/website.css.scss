@@ -1,0 +1,356 @@
+@import "compass/css3";
+
+span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  vertical-align: middle;
+}
+/* Layout
+-------------------------------------------------------------- */
+html{overflow-y:auto;}
+img,video{max-width:100%;height:auto;}
+
+header, .bio {
+  width: 100%;
+}
+header {
+  width: 100%;
+  clear: both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  width: 100%;
+  padding: 0 1em;
+  @include pie-clearfix;
+  z-index: 1000;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+
+  .contacts {
+    position: absolute;
+    top: 50%;
+    right: 3em;
+    margin-top: -15px;
+  }
+  .contacts, h1 {
+    // width: 50%;
+    float: left;
+  }
+  .contacts ul {
+    margin: 0;
+    // float: right;
+    height: 100%;
+    display: table;
+    height: 30px;
+    padding: 0;
+    @include perspective(2000px);
+    li {
+      width: 24px;
+      height: 24px;
+      margin-right: 3px;
+      line-height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+
+      @include transition(0.25s all);
+      img,a {
+        margin: 0;
+      }
+      &:hover {
+        @include transform(rotateY(-180deg));
+        @include transform-origin(50%, 50%);
+        @include backface-visibility(visible);
+      }
+    }
+    li:last-child{
+      margin-right: 0px;
+    }
+  }
+
+}
+
+.bio {
+  padding-top: 4em;
+  overflow: hidden;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #ddd;
+}
+pre {
+  display: none;
+}
+
+#hara {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  // background: transparent url(/haret-hreik.jpg);
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  visibility: hidden;
+}
+#canvas {
+  position: absolute;
+  top: 40px;
+  // left: 50%;
+  // margin-left: -656px;
+}
+// img.project_thumb, {margin-top: 0.5em; margin-bottom: 0.6em!important;}
+
+.project {
+  @include transform-style(preserve-3d);
+  @include perspective(2000px);
+
+  hr {
+    margin: 0.61em 0;
+  }
+
+  .header {
+    // min-height: 140px;
+    h5 {
+      margin-bottom: 0 !important;
+      a {
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        @include transition(color 0.4s ease-in);
+      }
+      span {
+        cursor: pointer;
+      }
+      // .thumb {
+      //   width: 20%;
+      //   max-width: 140px;
+      //   height: 100%;
+      //   margin: 0;
+      //   position: relative;
+      // }
+      img {
+       width: 100%;
+        width: 20%;
+        max-width: 140px;
+        margin: 0;
+      }
+    }
+    &:hover {
+      h5 {
+        // img {
+        //   -webkit-mask-image: -webkit-linear-gradient(top, rgba(125,0,0,0.5), rgba(238, 73, 56,0.5));
+        // }
+      }
+    }
+  }
+  .content {
+    @include transition(transform 1s);
+    // @include transform(scale(0));
+    // height: 0;
+    // display: none;
+    @include transform-origin(50%,0);
+    @include backface-visibility(visible);
+  }
+
+  // &.collapse {
+  //   p, .bx-wrapper {
+  //     @include transition(0.5s);
+  //     @include transform(scaleY(0));
+  //     @include transform-origin(top);
+  //     max-height: 0;
+  //   }
+  // }
+
+  // .expand {
+  //   position: absolute;
+  //   right: 0;
+  // }
+
+
+  &.on {
+    .content {
+      @include transform(scale(1));
+      height: auto;
+      display: block;
+    }
+  }
+
+}
+
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+
+/* Page
+-------------------------------------------------------------- */
+body {
+  background-color: rgba(255, 255, 255, 1);
+  // background-color: #f00;
+  color: rgb(68, 68, 68);
+  margin: 1em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+/* Typography
+-------------------------------------------------------------- */
+body, #commentform textarea, #commentform input, #send, input#searchsubmit{
+  font: normal 100%/1.4 Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+}
+
+p {
+  margin: 0 0 2em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+.slider {
+  width: 100%;
+  p {
+    width: auto;
+    margin: 0;
+  }
+}
+strong {font-weight: bold;}
+em {font-style: italic;}
+h1 {font-size: 1.667em;}
+
+h2, h3, h4, h5 {
+  font-size: 1.667em;
+  /*line-height: 1.41em;*/
+  line-height: 1.3em;
+  margin-bottom: 0.25em;
+  color: #333;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+}
+
+h5{font-size: 1.1em;}
+h6{font-size:1em; font-weight:700;}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin: 0;}
+h2 a.article_title {color: #333;}
+h2 a.article_title:hover{color: #EE4938;}
+::-moz-selection{ background: #EE4938; color:#fff; text-shadow: none; }
+::selection { background: #EE4938; color:#fff; text-shadow: none; }
+
+
+/* Links
+-------------------------------------------------------------- */
+a {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+  text-decoration: underline;
+}
+a:hover {
+  color: #EE4938;
+}
+a {
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+  -ms-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+}
+/* Images
+-------------------------------------------------------------- */
+img {width: auto; max-width: 100%; height: auto; margin: 0 auto;}
+figure{margin: 0 0 2em;}
+figcaption{font-style: italic; font-size:80%;}
+
+
+/* Lists
+-------------------------------------------------------------- */
+ol {margin: 0 0 2em;}
+ul {
+  list-style-type: none;
+  margin-top: 0; margin-left: 0;
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+ol {list-style-type: decimal;}
+dl {margin: 0 0 2.4em 0;}
+dl dt {width: 4em; margin-right: 1em; float: left;}
+dd {margin-left: 5em;margin-bottom: 2.4em;}
+
+ul li {
+  float: left;
+  margin-right: 1em;
+}
+
+/* Other Elements
+-------------------------------------------------------------- */
+dfn {font-style: italic; font-weight: bold; background: #ffc;}
+sup, sub {line-height: 0;}
+address {margin: 0 0 1.5em; font-style: normal; font-size: 1.2em;}
+del {text-decoration: line-through;}
+tt {display: block; margin: 1.5em 0; line-height: 1.5;}
+// hr {margin: 23px 0px;}
+
+code {
+  font: 0.85em/1.35 'andale mono', 'lucida console', monospace;
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 0.02em 0.25em;
+  /* overflow: scroll; */
+}
+
+code pre{
+  display:block;
+}
+
+pre{
+  margin-bottom: 2.4em;
+}
+
+blockquote {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 37.500em) { /*600px*/
+  .container{width:85%;}
+  body {font-size: 112.5%;line-height: 1.5;}
+  h1{font-size: 2em}
+  h2, h3, h4, h5 {font-size: 1.875em;line-height: 1.3em;}
+  h5{font-size: 1.2em;}
+  p{width:100%; max-width:none;}
+}
+
+@media screen and (min-width: 50.000em) { /*800px*/
+  body {font-size: 125%;}
+  p{width:100%; max-width:none;}
+}
+
+@media screen and (min-width: 64.375em){ /*1030px*/
+  body {font-size: 137.5%;}
+  p{width:100%; max-width:none;}
+}
+
+@media screen and (min-width: 75.000em) and (min-height:31.250em) { /*1200px X 500px*/
+  body {font-size: 150%;}
+}
+
+@media screen and (min-width: 106.875em) and (min-height:50.000em)  { /*1710px X 800px*/
+  body {font-size: 162.5%;}
+}
+
+@media screen and (min-height:43.750em)  {  /*700px*/
+
+}
