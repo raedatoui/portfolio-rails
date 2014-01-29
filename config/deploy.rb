@@ -66,7 +66,7 @@ namespace :deploy do
   task :cold do
     update_code
     bundle.install
-    db.migrate
+    # db.migrate
     assets.compile
     unicorn.reload
     # notify.mail
