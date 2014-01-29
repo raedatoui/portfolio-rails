@@ -72,7 +72,7 @@ group :development do
   gem "rvm-capistrano", "1.5.1"
 
 end
-
+gem "therubyracer"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
