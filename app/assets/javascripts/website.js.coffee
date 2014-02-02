@@ -72,8 +72,10 @@ $ ->
     e.preventDefault()
     section = $(this).parent()
 
-    console.log section.hasClass('on')
     if !section.hasClass('on')
+
+      ga('send', 'event', 'button', 'click', section.attr("data-slug"));
+
       $.ajax
         type: 'GET'
         url: "/posts/#{$(this).parent().attr("data-id")}.js"
@@ -89,7 +91,7 @@ $ ->
             scrollTop: section.offset().top - $('header').height()
           setTimeout   =>
             section.find('.slider').each (index) ->
-              console.log parseInt($(this).data("slide-width"))
+
               if $(this).children().length
                 $(this).bxSlider
                   video: true
@@ -105,6 +107,9 @@ $ ->
     else
       $('section.on').find('.content').remove()
       $('section.on').removeClass('on')
+
+  $(".contacts li a").on "click" , (e)->
+    ga('send', 'event', 'button', 'click', $(this).parent().attr("data-slug"));
 
 shuffle = (array) ->
   counter = array.length

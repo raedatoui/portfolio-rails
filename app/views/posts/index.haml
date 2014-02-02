@@ -3,7 +3,7 @@
 
 %article.projects
   - @posts.each do |post|
-    %section.project{"data-id" => post.id}
+    %section.project{"data-id" => post.id, "data-slug" => post.slug}
       .header
         %h5
           %a{:href => post.project_url}

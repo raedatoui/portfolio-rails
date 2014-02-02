@@ -3,28 +3,28 @@
     %h1 Raed Atoui
     .contacts
       %ul
-        %li
-          %a{href: "mailto:raed.atoui@gmail.com"}
+        %li{"data-slug" => "email"}
+          %a{target: "_blank", href: "mailto:raed.atoui@gmail.com"}
             = image_tag "glyphicons_399_e-mail.png"
 
-        %li
-          %a{href: "http://github.com/raedatoui"}
+        %li{"data-slug" => "github"}
+          %a{target: "_blank", href: "http://github.com/raedatoui"}
             =image_tag "glyphicons_381_github.png"
 
-        %li
-          %a{href: "http://www.linkedin.com/in/raedatoui"}
+        %li{"data-slug" => "linkedin"}
+          %a{target: "_blank", href: "http://www.linkedin.com/in/raedatoui"}
             =image_tag "glyphicons_377_linked_in.png"
 
-        %li
-          %a{href: "http://zoo.tl/u/raedatoui"}
+        %li{"data-slug" => "zootool"}
+          %a{target: "_blank", href: "http://zoo.tl/u/raedatoui"}
             =image_tag "glyphicons_373_zootool.png"
 
-        %li
-          %a{href: "http://soundcloud.com/raedatoui"}
+        %li{"data-slug" => "soundcloud"}
+          %a{target: "_blank", href: "http://soundcloud.com/raedatoui"}
             =image_tag "sc.jpg"
 
-        %li
-          %a{href: "http://www.last.fm/user/BlackIcicles"}
+        %li{"data-slug" => "lastfm"}
+          %a{target: "_blank", href: "http://www.last.fm/user/BlackIcicles"}
             =image_tag "glyphicons_396_last_fm.png"
 
   -# .onoffswitch
