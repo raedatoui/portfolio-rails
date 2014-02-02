@@ -14,6 +14,7 @@ span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abb
   height: 100%;
   display: table;
   width: 100%;
+  padding: 0 1em;
 }
 html{overflow-y:auto;}
 img,video{max-width:100%;height:auto;}
@@ -28,7 +29,6 @@ header {
   top: 0;
   left: 0;
   overflow: visible;
-  // padding: 0 1em;
   margin: auto 0;
   @include pie-clearfix;
   z-index: 1000;
@@ -37,7 +37,7 @@ header {
   .contacts {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 2.6em;
     margin-top: -15px;
   }
   .contacts, h1 {
@@ -341,6 +341,11 @@ blockquote {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 1200px) {
+  #header-container {
+    padding: 0;
+  }
+}
 
 @media screen and (min-width: 37.500em) { /*600px*/
   .container{width:85%;}
