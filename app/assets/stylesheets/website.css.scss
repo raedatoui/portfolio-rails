@@ -108,7 +108,12 @@ pre {
   hr {
     margin: 0.61em 0;
   }
+  &.on {
 
+    .header {
+      padding-bottom: 2em;
+    }
+  }
   .header {
     // min-height: 140px;
     h5 {
@@ -145,6 +150,7 @@ pre {
       }
     }
   }
+
   .content {
     @include transition(transform 1s);
     // @include transform(scale(0));

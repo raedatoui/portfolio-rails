@@ -116,34 +116,39 @@ $ ->
     e.preventDefault()
     section = $(this).parent()
 
-    $.ajax
-      type: 'GET'
-      url: "/posts/#{$(this).parent().attr("data-id")}.js"
-      dataType : 'html'
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log("wow")
-      success: (data, textStatus, jqXHR) =>
-        $('section.on').find('.content').remove()
-        $('section.on').removeClass('on')
-        section.find('hr').before(data)
-        section.addClass('on')
-        $('html, body').animate
-          scrollTop: section.offset().top - $('header').height()
-        setTimeout   =>
-          section.find('.slider').each (index) ->
-            console.log parseInt($(this).data("slide-width"))
-            if $(this).children().length
-              $(this).bxSlider
-                video: true
-                adaptiveHeight: true
-                controls: true
-                pager: false
-                # slideWidth: parseInt($(this).data("slide-width"))
-                slideMargin: 10
-                responsive: true
-                # minSlides: 2
-                # maxSlides: 3
-        , 250
+    console.log section.hasClass('on')
+    if !section.hasClass('on')
+      $.ajax
+        type: 'GET'
+        url: "/posts/#{$(this).parent().attr("data-id")}.js"
+        dataType : 'html'
+        error: (jqXHR, textStatus, errorThrown) ->
+          console.log("wow")
+        success: (data, textStatus, jqXHR) =>
+          $('section.on').find('.content').remove()
+          $('section.on').removeClass('on')
+          section.find('hr').before(data)
+          section.addClass('on')
+          $('html, body').animate
+            scrollTop: section.offset().top - $('header').height()
+          setTimeout   =>
+            section.find('.slider').each (index) ->
+              console.log parseInt($(this).data("slide-width"))
+              if $(this).children().length
+                $(this).bxSlider
+                  video: true
+                  adaptiveHeight: true
+                  controls: true
+                  pager: false
+                  # slideWidth: parseInt($(this).data("slide-width"))
+                  slideMargin: 10
+                  responsive: true
+                  # minSlides: 2
+                  # maxSlides: 3
+          , 250
+    else
+      $('section.on').find('.content').remove()
+      $('section.on').removeClass('on')
 
 shuffle = (array) ->
   counter = array.length
