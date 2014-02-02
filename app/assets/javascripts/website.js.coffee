@@ -101,8 +101,8 @@ $ ->
                   slideWidth: parseInt($(this).data("slide-width"))
                   slideMargin: 10
                   responsive: true
-                  minSlides: 2
-                  maxSlides: 3
+                  # minSlides: 2
+                  # maxSlides: 3
           , 250
     else
       $('section.on').find('.content').remove()
