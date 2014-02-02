@@ -2,7 +2,7 @@ rails_env = ENV['RAILS_ENV']
 RAILS_ROOT = "/srv/www/raedatoui.com/app/current"
 
 # 16 workers and 1 master
-worker_processes 3
+worker_processes 1
 
 #(rails_env == 'production' ? 2 : 1)
 
