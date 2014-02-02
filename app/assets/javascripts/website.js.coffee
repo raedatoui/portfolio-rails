@@ -4,59 +4,15 @@
 
 
 $ ->
-  # putpixel = (ix, iy, rd, gr, bl, al) ->
-  #   p = (yr * iy + ix) * 4
-  #   pix[p] = rd % 256 # red
-  #   pix[p + 1] = gr % 256 # green
-  #   pix[p + 2] = bl % 256 # blue
-  #   pix[p + 3] = al % 256 # alpha
+  $('body').flowtype
+   fontRatio : 30,
+   lineRatio : 1.45
+   minFont   : 12
+   maxFont   : 40
+   maximum   : 1200
 
-  # getpixel = (ix, iy) ->
-  #   p = (yr * iy + ix) * 4
-  #   rd = pix[p] # red
-  #   gr = pix[p + 1] # green
-  #   bl = pix[p + 2] # blue
-  #   al = pix[p + 3] # alpha
-
-  # canvas = document.getElementById("canvas")
-  # context = canvas.getContext("2d")
-  # xr = context.canvas.width
-  # yr = context.canvas.height
-  # imgd = context.createImageData(xr, yr)
-  # pix = imgd.data
-  # rd = 0
-  # gr = 0
-  # bl = 0
-  # al = 0
-
-  # # seed
-  # rd0 = Math.floor(Math.random() * 128) + 1
-  # gr0 = Math.floor(Math.random() * 128) + 1
-  # bl0 = Math.floor(Math.random() * 128) + 1
-  # putpixel xr - 1, 0, rd0, gr0, bl0, 255
-  # rd1 = 0
-  # gr1 = 0
-  # bl1 = 0
-  # ky = 1
-
-  # while ky < yr - 1
-  #   kx = 0
-
-  #   while kx < xr - 1
-  #     getpixel kx, ky - 1
-  #     rd1 = rd
-  #     gr1 = gr
-  #     bl1 = bl
-  #     getpixel kx + 1, ky - 1
-  #     # XOR
-  #     putpixel kx, ky, rd0, bl0, gr0, 255  if (rd1 is 0 and rd > 0) or (rd1 > 0 and rd is 0)
-  #     kx++
-  #   ky++
-
-  # context.putImageData imgd, 0, 0
-  # console.log imgd
   counter = 0
-  TweenLite.to($('.onoffswitch'), 2, {opacity:1, delay:1})
+  # TweenLite.to($('.onoffswitch'), 2, {opacity:1, delay:1})
 
   $(".slider").each (index) ->
     console.log $(this).attr("id"), parseInt($(this).data("slide-width"))
@@ -140,7 +96,7 @@ $ ->
                   adaptiveHeight: true
                   controls: true
                   pager: false
-                  # slideWidth: parseInt($(this).data("slide-width"))
+                  slideWidth: parseInt($(this).data("slide-width"))
                   slideMargin: 10
                   responsive: true
                   # minSlides: 2

@@ -16,4 +16,4 @@
 //= require website
 //= require_tree ./plugins
 //= require jquery.bxslider
-//= require_tree ./gsap
+//= require flowtype

@@ -5,6 +5,16 @@ span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abb
 }
 /* Layout
 -------------------------------------------------------------- */
+#main, #header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+#header-container {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
 html{overflow-y:auto;}
 img,video{max-width:100%;height:auto;}
 
@@ -18,8 +28,8 @@ header {
   top: 0;
   left: 0;
   overflow: visible;
-  width: 100%;
-  padding: 0 1em;
+  // padding: 0 1em;
+  margin: auto 0;
   @include pie-clearfix;
   z-index: 1000;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
@@ -27,26 +37,27 @@ header {
   .contacts {
     position: absolute;
     top: 50%;
-    right: 3em;
+    right: 0;
     margin-top: -15px;
   }
   .contacts, h1 {
     // width: 50%;
     float: left;
+    padding: 0.2em 0;
   }
   .contacts ul {
     margin: 0;
     // float: right;
-    height: 100%;
     display: table;
-    height: 30px;
+    // height: 100%;
+    font-size: 16px !important;
     padding: 0;
     @include perspective(2000px);
     li {
-      width: 24px;
-      height: 24px;
+      width: 24px !important;
+      height: 24px !important;
       margin-right: 3px;
-      line-height: 100%;
+      line-height: 100% !important;
       display: table-cell;
       vertical-align: middle;
 
@@ -296,6 +307,7 @@ dd {margin-left: 5em;margin-bottom: 2.4em;}
 ul li {
   float: left;
   margin-right: 1em;
+  width: auto !important;
 }
 
 /* Other Elements
@@ -332,29 +344,29 @@ blockquote {
 
 @media screen and (min-width: 37.500em) { /*600px*/
   .container{width:85%;}
-  body {font-size: 112.5%;line-height: 1.5;}
-  h1{font-size: 2em}
-  h2, h3, h4, h5 {font-size: 1.875em;line-height: 1.3em;}
-  h5{font-size: 1.2em;}
+  // body {font-size: 112.5%;line-height: 1.5;}
+  // h1{font-size: 2em}
+  // h2, h3, h4, h5 {font-size: 1.875em;line-height: 1.3em;}
+  // h5{font-size: 1.2em;}
   p{width:100%; max-width:none;}
 }
 
 @media screen and (min-width: 50.000em) { /*800px*/
-  body {font-size: 125%;}
+  // body {font-size: 125%;}
   p{width:100%; max-width:none;}
 }
 
 @media screen and (min-width: 64.375em){ /*1030px*/
-  body {font-size: 137.5%;}
+  // body {font-size: 137.5%;}
   p{width:100%; max-width:none;}
 }
 
 @media screen and (min-width: 75.000em) and (min-height:31.250em) { /*1200px X 500px*/
-  body {font-size: 150%;}
+  // body {font-size: 150%;}
 }
 
 @media screen and (min-width: 106.875em) and (min-height:50.000em)  { /*1710px X 800px*/
-  body {font-size: 162.5%;}
+  // body {font-size: 162.5%;}
 }
 
 @media screen and (min-height:43.750em)  {  /*700px*/
