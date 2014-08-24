@@ -1,7 +1,7 @@
 @import "compass/css3";
 
 span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 /* Layout
 -------------------------------------------------------------- */
@@ -135,9 +135,13 @@ pre {
         width: 100%;
         height: 100%;
         @include transition(color 0.4s ease-in);
+        line-height: 140px;
+        vertical-align: middle;
       }
       span {
         cursor: pointer;
+        vertical-align: middle;
+        display: inline-block;
       }
       // .thumb {
       //   width: 20%;
@@ -151,6 +155,8 @@ pre {
         width: 20%;
         max-width: 140px;
         margin: 0;
+        vertical-align: middle;
+        display: inline-block;
       }
     }
     &:hover {
@@ -223,7 +229,7 @@ body.noscroll {
 /* Typography
 -------------------------------------------------------------- */
 body, #commentform textarea, #commentform input, #send, input#searchsubmit{
-  font: normal 100%/1.4 Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: normal 100%/1.4 Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-rendering: optimizelegibility;
@@ -377,3 +383,13 @@ blockquote {
 @media screen and (min-height:43.750em)  {  /*700px*/
 
 }
+
+// .header {
+//   a {
+//     display: inline-block;
+//     h5, img {
+//       float: left;
+//       vertical-align: middle;
+//     }
+//   }
+// }

@@ -29,7 +29,7 @@ CKEDITOR.editorConfig = function( config )
     //         ['Undo','Redo'],
     //         ['Source']
     //     ];
-  config.font_names = 'Lato';
+  config.font_names = 'Roboto';
 
   config.height = '500px';
 

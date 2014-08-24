@@ -7,9 +7,7 @@
       .header
         %h5
           %a{:href => post.project_url}
-            -# .thumb
             %img.project_thumb{:src => post.thumb.url, :style => "max-width:140px"}
             %span!= post.title
-        -# = render template: "website/post", locals: { post:  post }
       %hr
 
